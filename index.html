@@ -65,6 +65,16 @@
     <script src="https://cdn.jsdelivr.net/npm/horizontal-scroll@1.1.0/dist/index.min.js"></script>
     <script src="./assets/js/locomotive.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+        var blocks = document.getElementsByClassName("container__item");
+        var container = document.getElementsByClassName("container");
+        var hs = new HorizontalScroll.default({
+            blocks: blocks,
+            container: container,
+            isAnimated: true,
+            springEffect: 0.8
+        });
+    </script>
 </body>
 
 </html>

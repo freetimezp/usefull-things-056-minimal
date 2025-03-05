@@ -25,22 +25,22 @@
             </div>
         </nav>
 
-        <div class="project__container">
-            <div class="project__container-title">
+        <div class="project__container" data-scroll-section>
+            <div class="project__container-title" data-scroll>
                 <h1 class="anime-js-title">Creative mix</h1>
             </div>
-            <div class="project__container-subtitle">
+            <div class="project__container-subtitle" data-scroll>
                 <p>Visual Design</p>
             </div>
 
             <div class="project__container-images">
-                <div class="project__image project__image-one"></div>
-                <div class="project__image project__image-two"></div>
-                <div class="project__image project__image-three"></div>
-                <div class="project__image project__image-four"></div>
+                <div class="project__image project__image-one" data-scroll data-scroll-speed="1"></div>
+                <div class="project__image project__image-two" data-scroll data-scroll-speed="4"></div>
+                <div class="project__image project__image-three" data-scroll data-scroll-speed="2"></div>
+                <div class="project__image project__image-four" data-scroll data-scroll-speed="4"></div>
             </div>
 
-            <div class="project-next-link">
+            <div class="project-next-link" data-scroll>
                 <a href="projects.html">Next</a>
             </div>
         </div>
@@ -55,8 +55,37 @@
     <script src="./assets/js/main.js"></script>
 
     <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector("#js-scroll"),
+            smooth: true,
+            smoothMobile: true,
+            inertia: 0.75
+        });
+
         var textWrapper = document.querySelector(".anime-js-title");
         textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline()
+            .add({
+                targets: ".anime-js-title .letter",
+                translateY: [60, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 600 + 30 * i
+            });
+
+        TweenMax.from(".project__container-subtitle", 2, {
+            y: 10,
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+
+        TweenMax.from(".project_image-one", 2, {
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
     </script>
 </body>
 
