@@ -9,41 +9,48 @@
     <title>Project | About</title>
 </head>
 
-<body id="js-scroll">
-    <div class="wrapper">
-        <nav class="menu">
-            <div class="menu__logo">
-                <a href="index.html">st</a>
-            </div>
-            <div class="menu__items">
-                <div class="menu__items-link">
-                    <a href="projects.html">Projects</a>
-                </div>
-                <div class="menu__items-link active">
-                    <a href="about.html">About</a>
-                </div>
-            </div>
-        </nav>
+<style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+</style>
 
-        <div class="about__container" data-scroll-section>
-            <p class="about__container-data" data-scroll>
-                Hi! My name is <span>Kurt Devenport</span>
-                and I'm a web developer, born in <span>Lviv, Ukraine</span>.
-            </p>
-            <p data-scroll>
-                If you have a questions or wolud you like to have a call,
-                we can
-                <span class="about__container-contact-link">
-                    <a href="#">Talk Here</a>
-                </span>
-            </p>
-            <p class="about__container-link" data-scroll>
-                <a href="#">@ popular & modern design in 2024-25</a>.
-            </p>
+<body id="js-scroll">
+        <div class="wrapper">
+            <nav class="menu">
+                <div class="menu__logo">
+                    <a href="index.html">SQ</a>
+                </div>
+                <div class="menu__items">
+                    <div class="menu__items-link">
+                        <a href="projects.html">Projects</a>
+                    </div>
+                    <div class="menu__items-link active">
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="about__container" data-scroll-section>
+                <p class="about__container-data" data-scroll>
+                    Hi! My name is <span>Oleg Demyanenko</span>
+                    and I'm a web developer, born in <span>Lviv, Ukraine</span>.
+                </p>
+                <p data-scroll>
+                    If you have a questions or would you like to have a call,
+                    we can
+                    <span class="about__container-contact-link">
+                        <a href="#">Talk Here</a>
+                    </span>
+                </p>
+                <p class="about__container-link" data-scroll>
+                    <a href="#">@ popular & modern design in 2025</a>.
+                </p>
+            </div>
+
         </div>
 
-        <div class="cursor-follow"></div>
-    </div>
+    <div class="cursor-follow"></div>
 
 
 
@@ -60,9 +67,9 @@
             inertia: 0.75
         });
 
-        TweenMax.from(".cursor-follow", 2, {
+        TweenMax.to(".cursor-follow", 2, {
             delay: 1,
-            opacity: 0
+            opacity: 1
         });
 
         follower = document.querySelector(".cursor-follow");
@@ -90,7 +97,6 @@
             mouseX = e.pageX;
             mouseY = e.pageY;
         });
-
     </script>
 </body>
 
